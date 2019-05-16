@@ -1,5 +1,24 @@
-# casperjs-mvp-scraper
-CasperJS web scraping MVP
+# CasperJS MVP Web Scraper
+CasperJS web scraping that interact with tab and form
+
+Modify index variables & run
+```
+Invoke
+npm run casper ${nCurrent} ${nStep} ${rndBase} ${rndTop} ${isSubSeq}
+
+Random
+npm run casper 20000000 10 1000000 9999999 0
+
+Sequence
+npm run casper 20000000 10 0 0 0
+
+Multiples
+node multi.js
+
+If need to parse local htmls use parsers where it fit
+node parser.group.regex.csv.js
+
+```
 
 
 AWS EC2's Deploy Instructions
@@ -12,11 +31,9 @@ Deploy Ubuntu AMI
 Login To instance
 base storage 16GB cause tmps on caspers on npm folders
 
-ssh -i aws_key.pem ubuntu@ec2-dns.compute.amazonaws.com
+`ssh -i aws_key.pem ubuntu@ec2-dns.compute.amazonaws.com`
 
 AWS AMIs Compatible
-
-If First Install: Create AWS AMI image for EC2s launch at this point
 
 ```
 sudo apt-get update -y
@@ -24,7 +41,7 @@ sudo apt-get install libc6 libstdc++6 libgcc1 libgtk2.0-0 libasound2 libxrender1
 sudo apt-get install python -y
 ```
 
-
+install max casperjs firefox version
 ```
 wget https://ftp.mozilla.org/pub/firefox/releases/59.0/linux-x86_64/en-US/firefox-59.0.tar.bz2
 tar xvjf firefox-59.0.tar.bz2
@@ -168,7 +185,7 @@ add to /etc/stab
 sudo vi /etc/fstab
 ```
 
-UUID=<UUID> /mnt/nvm ext4 defaults 0 0
+`UUID=<UUID> /mnt/nvm ext4 defaults 0 0`
 
 UUID=8d1d3d75-3626-40e3-970a-40d8f6936c29 /mnt/nvm ext4 defaults 0 0
 
