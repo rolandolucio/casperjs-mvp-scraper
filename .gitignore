@@ -1,0 +1,10 @@
+node_modules
+.webpack
+.serverless
+dist
+.DS_Store
+npm-debug.log
+build
+volumes
+.vscode
+.env
